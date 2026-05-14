@@ -24,12 +24,13 @@ channel/
 
 ## 基本フロー
 
-1. `common/templates/video-plan-template.md` を使って新規企画を作る。
-2. タイトル候補は `channel/Driftane/assets/titles.md` に追記する。
-3. 音楽生成プロンプトは `channel/Driftane/assets/music-prompts.md` に記録する。
-4. 説明文は `channel/Driftane/assets/descriptions.md` の型から作る。
-5. サムネイルは `common/checklists/thumbnail-checklist.md` と `channel/Driftane/assets/thumbnail-style-guide.md` で確認する。
-6. 公開または予約のタイミングで `channel/Driftane/video-index.md` を更新する。
+1. Driftaneの新規動画は `channel/Driftane/new-video-workflow.md` のトリガー文から始める。
+2. `common/templates/video-plan-template.md` を使って新規企画を作る。
+3. タイトル候補は `channel/Driftane/assets/titles.md` に追記する。
+4. 音楽生成プロンプトは `channel/Driftane/assets/music-prompts.md` に記録する。
+5. 説明文は `channel/Driftane/assets/descriptions.md` の型から作る。
+6. サムネイルは `common/checklists/thumbnail-checklist.md` と `channel/Driftane/assets/thumbnail-style-guide.md` で確認する。
+7. 公開または予約のタイミングで `channel/Driftane/video-index.md` を更新する。
 
 ## Notion
 

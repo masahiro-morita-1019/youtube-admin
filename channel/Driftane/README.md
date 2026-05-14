@@ -41,3 +41,8 @@ Channel Studio:
 - 素材別の改善は `assets/` に記録する。
 - 公開単位の最終情報は `video-index.md` に集約する。
 - 既存のNotion DBは参照用。初期運用ではGitのMarkdownを主な管理元にする。
+
+## New Video Workflow
+
+新しい動画を作るときは `new-video-workflow.md` のトリガー文を使う。
+Codexに依頼するときは、テーマだけでも開始できるようにし、必要に応じてタイトル、Suno prompt、サムネイル生成方針、YouTube説明文をまとめて提案してもらう。
