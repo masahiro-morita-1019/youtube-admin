@@ -17,7 +17,7 @@ Driftaneの新規動画を作ります。
 - 採用推奨theme / mood
 - title候補
 - 採用推奨タイトル
-- Suno prompt
+- Suno prompt 5案
 - thumbnail prompt
 - thumbnail text
 - YouTube description
@@ -30,7 +30,7 @@ Driftaneの新規動画を作ります。
 ```text
 Driftaneの新規動画を作ります。
 テーマは「{theme}」です。
-タイトル、Suno prompt、サムネイル方針、説明文まで一式提案してください。
+タイトル、Suno prompt 5案、サムネイル方針、説明文まで一式提案してください。
 ```
 
 ## Minimum Inputs
@@ -83,6 +83,25 @@ Driftaneの新規動画を作ります。
 - Focus
 - Mysterious
 
+## Suno Prompt Rules
+
+1日で作れる曲は5種類までなので、採用theme / moodが決まったらSuno promptは5案出します。
+
+- 5案は同じthemeを共有しつつ、音の方向性を少しずつ変える。
+- しばらくはsleep / deep sleep向けを優先する。
+- すべてno vocals前提にする。
+- 1案ごとに狙いを1行で書く。
+- 5案のうち、採用推奨を1つ選ぶ。
+- 生成後に、良かった点、微妙だった点、次回改善点を `assets/music-prompts.md` に残す。
+
+5案の使い分け:
+
+- Prompt A: 最も標準的なsleep ambient案。
+- Prompt B: environmental tonesを強めた自然音寄り案。
+- Prompt C: cinematic padsを強めた没入感重視案。
+- Prompt D: minimal rhythmまたはpulseを少し入れたfocus兼用案。
+- Prompt E: darkすぎないmysterious / dreamy寄りの差別化案。
+
 ## Expected Output
 
 Codexから受け取りたい成果物はこの順番です。
@@ -93,12 +112,13 @@ Codexから受け取りたい成果物はこの順番です。
 4. Title candidates
 5. Recommended title
 6. Concept memo
-7. Suno prompt
-8. Thumbnail prompt
-9. Thumbnail text
-10. YouTube description
-11. Checklist notes
-12. Git update proposal
+7. Suno prompt candidates, 5 variants
+8. Recommended Suno prompt
+9. Thumbnail prompt
+10. Thumbnail text
+11. YouTube description
+12. Checklist notes
+13. Git update proposal
 
 ## Output Format
 
@@ -124,11 +144,49 @@ Recommended: {Title A} | Deep Sleep Ambient Music
 
 日本語の制作メモ。
 
-## Suno Prompt
+## Suno Prompt Candidates
+
+### Prompt A - standard sleep ambient
+
+Aim: {日本語の狙い}
 
 ```text
-{prompt}
+{prompt A}
 ```
+
+### Prompt B - environmental tones
+
+Aim: {日本語の狙い}
+
+```text
+{prompt B}
+```
+
+### Prompt C - cinematic pads
+
+Aim: {日本語の狙い}
+
+```text
+{prompt C}
+```
+
+### Prompt D - focus compatible
+
+Aim: {日本語の狙い}
+
+```text
+{prompt D}
+```
+
+### Prompt E - dreamy variation
+
+Aim: {日本語の狙い}
+
+```text
+{prompt E}
+```
+
+Recommended Suno prompt: Prompt {A-E}
 
 ## Thumbnail Prompt
 
@@ -164,6 +222,7 @@ DEEP SLEEP AMBIENT MUSIC
 - 内部メモと改善メモは日本語でよい。
 - テーマ未定の場合は、過去動画と被らないtheme候補を先に出す。
 - しばらくはmoodをSleep中心にする。
+- Suno promptは1日5種類まで作れる前提で、5案を提案する。
 - タイトルは2〜3語の詩的な英語を優先する。
 - 用途が伝わるように `| Deep Sleep Ambient Music` などを付ける。
 - サムネイル本番画像は16:9。
@@ -176,7 +235,7 @@ DEEP SLEEP AMBIENT MUSIC
 1. トリガー文でCodexに新規動画案を依頼する。
 2. 提案されたtheme / mood候補から1つ採用する。
 3. 提案されたtitle候補から1つ採用する。
-4. 採用したSuno promptで音楽を生成する。
+4. 提案されたSuno prompt 5案を確認し、必要なら5種類すべて生成する。
 5. 生成結果の良かった点、微妙だった点、次回改善点を `assets/music-prompts.md` に追記する。
 6. thumbnail promptで16:9サムネイルを生成する。
 7. `common/checklists/thumbnail-checklist.md` でサムネイルを確認する。
@@ -197,7 +256,7 @@ Driftaneの新規動画を作ります。
 - 採用推奨theme / mood
 - title候補
 - 採用推奨タイトル
-- Suno prompt
+- Suno prompt 5案
 - thumbnail prompt
 - thumbnail text
 - YouTube description

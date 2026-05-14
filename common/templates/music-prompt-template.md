@@ -25,3 +25,53 @@ Soft spatial textures, slowly evolving pads, quiet cinematic ambience, deep calm
 - 良かった点:
 - 微妙だった点:
 - 次回改善:
+
+## Daily 5 Prompt Set
+
+1日で作れる曲は5種類まで。新規動画の初回提案では、同じtheme / moodに対して次の5案を出します。
+
+### Prompt A - standard sleep ambient
+
+- Aim:
+
+```text
+{prompt A}
+```
+
+### Prompt B - environmental tones
+
+- Aim:
+
+```text
+{prompt B}
+```
+
+### Prompt C - cinematic pads
+
+- Aim:
+
+```text
+{prompt C}
+```
+
+### Prompt D - focus compatible
+
+- Aim:
+
+```text
+{prompt D}
+```
+
+### Prompt E - dreamy variation
+
+- Aim:
+
+```text
+{prompt E}
+```
+
+## Selection Notes
+
+- 採用推奨:
+- 生成結果の比較:
+- 次回残す改善:

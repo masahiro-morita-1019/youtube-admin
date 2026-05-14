@@ -23,6 +23,12 @@
 - Instruments / texture:
 - Avoid:
 - Prompt source:
+- Suno prompt A:
+- Suno prompt B:
+- Suno prompt C:
+- Suno prompt D:
+- Suno prompt E:
+- Recommended prompt:
 - Generated result notes:
 
 ## Thumbnail Direction
