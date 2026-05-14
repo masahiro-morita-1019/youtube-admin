@@ -1,6 +1,6 @@
 # New Video Workflow
 
-Driftaneで新しい動画を作るときの実運用手順です。最初から完璧な情報を揃える必要はなく、テーマだけでも開始できます。
+Driftaneで新しい動画を作るときの実運用手順です。最初から完璧な情報を揃える必要はなく、テーマ未定でも開始できます。
 
 ## Trigger
 
@@ -8,11 +8,13 @@ Codexに新規動画案を作らせるときは、次のように依頼します
 
 ```text
 Driftaneの新規動画を作ります。
-テーマ: {例: Misty Pines / Window Rain / Nebula Voyage}
-用途: {例: deep sleep / relaxation / focus / meditation}
-雰囲気: {例: calm, dreamy, cinematic, not scary}
+過去動画と被らないテーマを3〜5案出してください。
+しばらくは睡眠向けを優先してください。
 
 以下を提案してください:
+- theme候補
+- mood候補
+- 採用推奨theme / mood
 - title候補
 - 採用推奨タイトル
 - Suno prompt
@@ -23,7 +25,7 @@ Driftaneの新規動画を作ります。
 - assets側に追記すべき改善メモ
 ```
 
-テーマだけで始める場合:
+テーマだけ指定して始める場合:
 
 ```text
 Driftaneの新規動画を作ります。
@@ -33,34 +35,83 @@ Driftaneの新規動画を作ります。
 
 ## Minimum Inputs
 
-最低限必要な入力は1つだけです。
+最低限必要な入力はありません。テーマ未定でも開始できます。
 
-- Theme: 何をイメージした動画か。
+デフォルトでは、Codexが `video-index.md` と `assets/titles.md` を確認し、過去動画と被らないthemeを提案します。しばらくはsleep / deep sleep向けのmoodを優先します。
 
 あると精度が上がる入力:
 
+- Theme: 使いたいテーマがある場合。
 - Use: sleep / deep sleep / relaxation / focus / meditation / mindfulness / stress relief
 - Mood: calm / dreamy / peaceful / mysterious / cinematic
 - Visual motif: forest / rain / ocean / moon / stars / cabin / window / train / snow
 - Avoid: 怖くしない、明るすぎない、人を入れない、ネオンを強くしない、など
 
+## Theme Proposal Rules
+
+テーマ提案から始める場合、Codexは先に次のファイルを確認します。
+
+- `channel/Driftane/video-index.md`: 過去に採用した動画テーマを確認する。
+- `channel/Driftane/assets/titles.md`: 既存タイトルとテーマ案を確認する。
+- `channel/Driftane/assets/thumbnail-style-guide.md`: Driftaneらしい世界観を確認する。
+
+テーマ案は次の条件で出します。
+
+- VID-001〜VID-004の主要テーマと丸被りしない。
+- しばらくはsleep / deep sleep向けに寄せる。
+- 怖さや孤独感より、安心感、静けさ、没入感を優先する。
+- タイトル化しやすい2〜3語の英語にする。
+- サムネイル化しやすい具体的な絵が浮かぶテーマにする。
+- 既存のmoon / rain forest / ocean space / all-nature collageと近すぎる場合は避ける。
+
+優先しやすい候補カテゴリ:
+
+- quiet indoor rain: Window Rain, Cozy Cabin Storm, Quiet Apartment Night
+- soft seasonal nature: Snowfall Silence, Autumn Fireplace, Spring Night Breeze
+- calm travel ambience: Rainy Train Ride, Moonlit Harbor
+- gentle fantasy nature: Spirit Garden, Crystal Cave, Floating Isles
+- focused night city: Tokyo After Rain, Rooftop Ambience
+
+デフォルトのmood:
+
+- Sleep
+- Calm
+- Peaceful
+
+必要な場合だけ追加するmood:
+
+- Focus
+- Mysterious
+
 ## Expected Output
 
 Codexから受け取りたい成果物はこの順番です。
 
-1. Title candidates
-2. Recommended title
-3. Concept memo
-4. Suno prompt
-5. Thumbnail prompt
-6. Thumbnail text
-7. YouTube description
-8. Checklist notes
-9. Git update proposal
+1. Theme candidates
+2. Mood candidates
+3. Recommended theme / mood
+4. Title candidates
+5. Recommended title
+6. Concept memo
+7. Suno prompt
+8. Thumbnail prompt
+9. Thumbnail text
+10. YouTube description
+11. Checklist notes
+12. Git update proposal
 
 ## Output Format
 
 ````markdown
+## Theme Candidates
+
+- {Theme A}: {日本語の狙い}
+- {Theme B}: {日本語の狙い}
+- {Theme C}: {日本語の狙い}
+
+Recommended theme: {Theme A}
+Recommended mood: Sleep, Calm, Peaceful
+
 ## Title Candidates
 
 - {Title A} | Deep Sleep Ambient Music
@@ -111,6 +162,8 @@ DEEP SLEEP AMBIENT MUSIC
 
 - 公開タイトルと説明文は英語。
 - 内部メモと改善メモは日本語でよい。
+- テーマ未定の場合は、過去動画と被らないtheme候補を先に出す。
+- しばらくはmoodをSleep中心にする。
 - タイトルは2〜3語の詩的な英語を優先する。
 - 用途が伝わるように `| Deep Sleep Ambient Music` などを付ける。
 - サムネイル本番画像は16:9。
@@ -121,24 +174,27 @@ DEEP SLEEP AMBIENT MUSIC
 ## Manual Workflow
 
 1. トリガー文でCodexに新規動画案を依頼する。
-2. 提案されたtitle候補から1つ採用する。
-3. 採用したSuno promptで音楽を生成する。
-4. 生成結果の良かった点、微妙だった点、次回改善点を `assets/music-prompts.md` に追記する。
-5. thumbnail promptで16:9サムネイルを生成する。
-6. `common/checklists/thumbnail-checklist.md` でサムネイルを確認する。
-7. 採用サムネイルを `assets/references/` または今後作る `assets/thumbnails/` に保存する。
-8. YouTube説明文を調整して公開または予約する。
-9. `video-index.md` にVID、タイトル、テーマ、用途、進捗、参照画像パスを追記する。
+2. 提案されたtheme / mood候補から1つ採用する。
+3. 提案されたtitle候補から1つ採用する。
+4. 採用したSuno promptで音楽を生成する。
+5. 生成結果の良かった点、微妙だった点、次回改善点を `assets/music-prompts.md` に追記する。
+6. thumbnail promptで16:9サムネイルを生成する。
+7. `common/checklists/thumbnail-checklist.md` でサムネイルを確認する。
+8. 採用サムネイルを `assets/references/` または今後作る `assets/thumbnails/` に保存する。
+9. YouTube説明文を調整して公開または予約する。
+10. `video-index.md` にVID、タイトル、テーマ、用途、進捗、参照画像パスを追記する。
 
 ## Example Request
 
 ```text
 Driftaneの新規動画を作ります。
-テーマ: Window Rain
-用途: deep sleep, relaxation
-雰囲気: quiet apartment night, soft rain, warm window light, calm, not lonely
+過去動画と被らないテーマを3〜5案出してください。
+しばらくは睡眠向けを優先してください。
 
 以下を提案してください:
+- theme候補
+- mood候補
+- 採用推奨theme / mood
 - title候補
 - 採用推奨タイトル
 - Suno prompt

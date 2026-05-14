@@ -24,7 +24,7 @@ channel/
 
 ## 基本フロー
 
-1. Driftaneの新規動画は `channel/Driftane/new-video-workflow.md` のトリガー文から始める。
+1. Driftaneの新規動画は `channel/Driftane/new-video-workflow.md` のトリガー文から始める。テーマ未定でも、過去動画と被らないtheme / mood候補の提案から開始できる。
 2. `common/templates/video-plan-template.md` を使って新規企画を作る。
 3. タイトル候補は `channel/Driftane/assets/titles.md` に追記する。
 4. 音楽生成プロンプトは `channel/Driftane/assets/music-prompts.md` に記録する。

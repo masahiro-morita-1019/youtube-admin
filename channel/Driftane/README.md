@@ -45,4 +45,4 @@ Channel Studio:
 ## New Video Workflow
 
 新しい動画を作るときは `new-video-workflow.md` のトリガー文を使う。
-Codexに依頼するときは、テーマだけでも開始できるようにし、必要に応じてタイトル、Suno prompt、サムネイル生成方針、YouTube説明文をまとめて提案してもらう。
+Codexに依頼するときは、テーマ未定でも開始できるようにし、過去動画と被らないtheme / mood候補、タイトル、Suno prompt、サムネイル生成方針、YouTube説明文をまとめて提案してもらう。
